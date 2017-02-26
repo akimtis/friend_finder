@@ -1,13 +1,162 @@
-// Rate the following five traits in a friend in order from 1-5, one being least important, five being most important.
-// Humor
-// Honesty
-// Respect
-// Kindness
-// Intellegence
 
-// Where 1 is not at all  5 is very much
-//I enjoy spending time in nature 
-//I enjoy surprises
-//I enjoy playing a sport
-//I am extroverted
-//I enjoy spending time watching movies and playing video games
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Friend Finder</h1>
+      <h3>Find new friends in your area by filling out a short survey!</h3>
+      <hr>
+      <a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Matches</button></a>
+    </div>
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Want to find friends? Fill out this survey.</strong></h3>
+            
+          </div>
+          <div class="panel-body">
+            <form method="POST" role="form">
+
+              <div class="form-group">
+              <h4 >Rank the following five friend traits in order from one to five, with one being least important, five being most important.</h4>
+                <label for="humor">Humor</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+                <!-- <input type="text" class="form-control" id="name"> -->
+              </div>
+
+              <div class="form-group">
+                <label for="honesty">Honesty</label>
+                <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+              <div class="form-group">
+                <label for="respect">Respect</label>
+                <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+              <div class="form-group">
+                <label for="kindness">Kindness</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+              <div class="form-group">
+                <label for="intellegence">Intellegence</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+              <div class="form-group"> 
+                <h4 >Answer the following questions. </h4>
+                <h4> 1= I don't agree at all. 2 = I don't really agree. 3 = I sort of agree. 4 = I mostly agree. 5 = I agree very much.</h4>
+                <label for="nature">I enjoy spending time in nature </label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+              <div class="form-group">
+                <label for="sport">I enjoy playing a sport </label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+              <div class="form-group">
+                <label for="surprises"> I enjoy surprises </label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+               <div class="form-group">
+                <label for="extroverted">I am extroverted </label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+
+               <div class="form-group">
+                <label for="video_games">I enjoy spending time watching movies and playing video games</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">1</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">2</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">3</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">4</label>
+                  <label class="checkbox-inline"><input type="checkbox" value="">5</label>
+              </div>
+            </form>
+
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="add-btn"> Add me to the friend finder</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newCharacter = {
+        name: $("#name").val().trim(),
+        role: $("#role").val().trim(),
+        age: $("#age").val().trim(),
+        forcePoints: $("#force-points").val().trim()
+      };
+
+      // Question: What does this code do??
+      $.post("/api/new", newCharacter)
+      .done(function(data) {
+        console.log(data);
+        alert("Adding character...");
+      });
+    });
+  </script>
+
+</body>
+</html>
