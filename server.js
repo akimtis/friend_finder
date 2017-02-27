@@ -1,6 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var path = requrie("path");
+// var path = requrie("path");
 var fs = require("fs");
 
 
@@ -17,25 +17,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Star Wars Characters (DATA)
 // =============================================================
-var characters = [{
-  routeName: "yoda",
-  name: "Yoda",
-  role: "Jedi Master",
-  age: 900,
-  forcePoints: 2000
-}, {
-  routeName: "darthmaul",
-  name: "Darth Maul",
-  role: "Sith Lord",
-  age: 200,
-  forcePoints: 1200
-}, {
-  routeName: "obiwankenobi",
-  name: "Obi Wan Kenobi",
-  role: "Jedi Master",
-  age: 55,
-  forcePoints: 1350
-}];
+
 
 // // Routes
 // // =============================================================
@@ -70,16 +52,16 @@ var characters = [{
 //   }
 // });
 
-// Create New Characters - takes in JSON input
+// Create New Friends - takes in JSON input
 app.post("/api/new", function(req, res) {
-  var newcharacter = req.body;
-  newcharacter.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
+  var newfriend = req.body;
+  newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newcharacter);
+  console.log(newfriend);
 
-  characters.push(newcharacter);
+  friends.push(newfriend);
 
-  res.json(newcharacter);
+  res.json(newfriend);
 });
 
 // Starts the server to begin listening

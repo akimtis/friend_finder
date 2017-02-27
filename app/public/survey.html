@@ -18,7 +18,7 @@
       <h1>Friend Finder</h1>
       <h3>Find new friends in your area by filling out a short survey!</h3>
       <hr>
-      <a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Matches</button></a>
+      <a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span> View Friends</button></a>
     </div>
     <div class="row">
 
@@ -31,7 +31,14 @@
           </div>
           <div class="panel-body">
             <form method="POST" role="form">
-
+              <div class="form-group">
+                <label for="name">Name</label>  
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="name">Age</label>  
+                <input type="text" class="form-control" id="age">
+              </div>
               <div class="form-group">
               <h4 >Rank the following five friend traits in order from one to five, with one being least important, five being most important.</h4>
                 <label for="humor">Humor</label>
