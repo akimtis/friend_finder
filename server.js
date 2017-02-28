@@ -1,8 +1,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-// var path = requrie("path");
+var path = require("path");
 var fs = require("fs");
-
+var htmlRoutes = require("./app/routing/htmlRoutes.js")
+var apiRoutes = require("./app/routing/apiRoutes.js")
+// var serveStatic = require('serve-static');
 
 // Sets up the Express App
 // =============================================================
@@ -15,17 +17,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// app.use(serveStatic(__dirname + '/public'));
+
+app.use(express.static(path.join(__dirname, '/app/public')));
+// app.use('/static', express.static(path.join(__dirname, './app/public')))
+
 // Star Wars Characters (DATA)
 // =============================================================
 
 
 // // Routes
 // // =============================================================
+apiRoutes(app);
+htmlRoutes(app);
 
 // // Basic route that sends the user first to the AJAX Page
-// app.get("/", function(req, res) {
-//   res.sendFile(path.join(__dirname, "view.html"));
-// });
+app.get("/", function(req, res) {
+  // res.send("hit home route")
+  console.log("home route..serving up home page")
+  // res.sendFile(path.join(__dirname + '/index.html'));
+  // res.sendFile(path.join(__dirname, "/home.html"));
+  res.sendFile(process.cwd() + '/app/public/home.html');
+});
 
 // app.get("/add", function(req, res) {
 //   res.sendFile(path.join(__dirname, "add.html"));
@@ -67,7 +80,5 @@ app.post("/api/new", function(req, res) {
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+  console.log("Server up...App listening on PORT " + PORT);
 });
-
-

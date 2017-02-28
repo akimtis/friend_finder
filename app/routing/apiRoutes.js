@@ -19,6 +19,8 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.get("/api/friends", function(req, res) {
+    console.log("sending JSON friends data to front end")
+    console.log(friendsData)
     res.json(friendsData);
   });
 
@@ -35,8 +37,8 @@ module.exports = function(app) {
     // It will do this by sending out the value "true" have a table
       friendsData.push(req.body);
       res.json(true);
-    }
-    
+    });
+
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.
   // Don"t worry about it!
