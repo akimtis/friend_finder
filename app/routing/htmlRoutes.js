@@ -21,6 +21,7 @@ module.exports = function(app) {
 
   // If no matching route is found default to home
   app.use(function(req, res) {
+    console.log("default routing")
     res.sendFile(path.join(__dirname, "/../public/home.html"));
   });
 };
