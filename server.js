@@ -34,7 +34,7 @@ htmlRoutes(app);
 // // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
   // res.send("hit home route")
-  console.log("home route..serving up home page")
+  // console.log("home route..serving up home page")
   // res.sendFile(path.join(__dirname + '/index.html'));
   // res.sendFile(path.join(__dirname, "/home.html"));
   res.sendFile(process.cwd() + '/app/public/home.html');
@@ -66,19 +66,19 @@ app.get("/", function(req, res) {
 // });
 
 // Create New Friends - takes in JSON input
-app.post("/api/new", function(req, res) {
-  var newfriend = req.body;
-  newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
+// app.post("/api/new", function(req, res) {
+//   var newfriend = req.body;
+//   newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
 
-  console.log(newfriend);
+//   console.log(newfriend);
 
-  friends.push(newfriend);
+//   friends.push(newfriend);
 
-  res.json(newfriend);
-});
+//   res.json(newfriend);
+// });
 
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, function() {
-  console.log("Server up...App listening on PORT " + PORT);
-});
+// // Starts the server to begin listening
+// // =============================================================
+// app.listen(PORT, function() {
+//   console.log("Server up...App listening on PORT " + PORT);
+// });

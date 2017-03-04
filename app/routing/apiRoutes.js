@@ -1,10 +1,4 @@
 
-// ===============================================================================
-// LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on table-data, waitinglist, etc.
-// ===============================================================================
-
 var friendsData = require("../data/friends.js");
 
 // ===============================================================================
@@ -39,17 +33,68 @@ module.exports = function(app) {
       res.json(true);
     });
 
+  var friendData = require('../data/friends.js');
+
+
+    app.post('/api/friends', function(req, res){
+      var newFriend = req.body;
+
+      for(var i = 0; i < newFriend.scores.length; i++) {
+        if(newFriend.scores[i] == "1") {
+          newFriend.scores[i] = 1;
+        } else if(newFriend.scores[i] == "5") {
+          newFriend.scores[i] = 5;
+        } else {
+          newFriend.scores[i] = parseInt(newFriend.scores[i]);
+        }
+      }
+
+      var differencesArray = [];
+
+      for(var i = 0; i < friendData.length; i++) {
+
+        var comparedFriend = friendData[i];
+        var totalDifference = 0;
+        
+        for(var k = 0; k < comparedFriend.scores.length; k++) {
+          var differenceOneScore = Math.abs(comparedFriend.scores[k] - newFriend.scores[k]);
+          totalDifference += differenceOneScore;
+        }
+
+        differencesArray[i] = totalDifference;
+      }
+
+      var bestFriendNum = differencesArray[0];
+      var bestFriendIndex = 0;
+
+      for(var i = 1; i < differencesArray.length; i++) {
+        if(differencesArray[i] < bestFriendNum) {
+          bestFriendNum = differencesArray[i];
+          bestFriendIndex = i;
+        }
+      }
+
+      friendData.push(newFriend);
+
+      res.json(friendData[bestFriendIndex]);
+    })
+  }
+  
+
+
+
   // ---------------------------------------------------------------------------
   // I added this below code so you could clear out the table while working with the functionality.
   // Don"t worry about it!
 
-  app.post("/api/clear", function() {
-    // Empty out the arrays of data
-    friendsData = [];
+//   app.post("/api/clear", function() {
+//     // Empty out the arrays of data
+//     friendsData = [];
 
-    console.log(friendsData);
-  });
-};
+//     console.log(friendsData);
+//   });
+// };
+
 
 // Search for Specific Friend (or all friends) - provides JSON
 // app.get("/api/:friends?", function(req, res) {
