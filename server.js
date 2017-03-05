@@ -19,59 +19,18 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // app.use(serveStatic(__dirname + '/public'));
 
-app.use(express.static(path.join(__dirname, '/app/public')));
+// app.use(express.static(path.join(__dirname, '/app/public')));
 // app.use('/static', express.static(path.join(__dirname, './app/public')))
 
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 
 // // Routes
 // // =============================================================
-apiRoutes(app);
-htmlRoutes(app);
+// apiRoutes(app);
+// htmlRoutes(app);
 
-// // Basic route that sends the user first to the AJAX Page
-app.get("/", function(req, res) {
-  res.send("hit home route")
-  // console.log("home route..serving up home page")
-  // res.sendFile(path.join(__dirname + '/index.html'));
-  // res.sendFile(path.join(__dirname, "/home.html"));
-  res.sendFile(process.cwd() + '/app/public/home.html');
-});
-
-
-
-// // Search for Specific Character (or all characters) - provides JSON
-// app.get("/api/:characters?", function(req, res) {
-//   var chosen = req.params.characters;
-
-//   if (chosen) {
-//     console.log(chosen);
-
-//     for (var i = 0; i < characters.length; i++) {
-//       if (chosen === characters[i].routeName) {
-//         res.json(characters[i]);
-//         return;
-//       }
-//     }
-
-//     res.json(false);
-//   }
-//   else {
-//     res.json(characters);
-//   }
-// });
-
-// Create New Friends - takes in JSON input
-// app.post("/api/new", function(req, res) {
-//   var newfriend = req.body;
-//   newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
-
-//   console.log(newfriend);
-
-//   friends.push(newfriend);
-
-//   res.json(newfriend);
-// });
 
 // Starts the server to begin listening
 // =============================================================
