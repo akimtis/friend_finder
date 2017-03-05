@@ -22,8 +22,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(path.join(__dirname, '/app/public')));
 // app.use('/static', express.static(path.join(__dirname, './app/public')))
 
-// Star Wars Characters (DATA)
-// =============================================================
 
 
 // // Routes
@@ -33,16 +31,14 @@ htmlRoutes(app);
 
 // // Basic route that sends the user first to the AJAX Page
 app.get("/", function(req, res) {
-  // res.send("hit home route")
+  res.send("hit home route")
   // console.log("home route..serving up home page")
   // res.sendFile(path.join(__dirname + '/index.html'));
   // res.sendFile(path.join(__dirname, "/home.html"));
   res.sendFile(process.cwd() + '/app/public/home.html');
 });
 
-// app.get("/add", function(req, res) {
-//   res.sendFile(path.join(__dirname, "add.html"));
-// });
+
 
 // // Search for Specific Character (or all characters) - provides JSON
 // app.get("/api/:characters?", function(req, res) {
@@ -77,8 +73,8 @@ app.get("/", function(req, res) {
 //   res.json(newfriend);
 // });
 
-// // Starts the server to begin listening
-// // =============================================================
-// app.listen(PORT, function() {
-//   console.log("Server up...App listening on PORT " + PORT);
-// });
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log("Server up...App listening on PORT " + PORT);
+});

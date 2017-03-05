@@ -36,14 +36,15 @@
                 <input type="text" class="form-control" id="name">
               </div>
               <div class="form-group">
-                <label for="name">Age</label>
-                <input type="text" class="form-control" id="age">
+                <label for="photo">Photo</label>
+                <input type="text" class="form-control" id="photo" placeholder="copy link to a photo here">
               </div>
               <div class="form-group">
               <h4 >Rank the following five friend traits in order from one to five, with one being least important, five being most important.</h4>
+
+            <div class="row">
+              <div class="col-md-6">
                 <label for="humor">Humor</label>
-                <br>
-                <div class="col-md-4">
                   <select class="form-control" id="question01" name="scores[0]">
                     <option>1 (Most Important)</option>
                     <option>2 (Second Most Important</option>
@@ -53,40 +54,43 @@
                   </select>
                 </div>
               </div>
+            </div>
 
-              <div class="form-group">
-                <label for="honesty">Honesty</label>
-                <br>
-                <div class="col-md-4">
-                  <select class="form-control" id="question01" name="scores[0]">
-                    <option>1 (Most Important)</option>
-                    <option>2 (Second Most Important</option>
-                    <option>3 (Third Most Important</option>
-                    <option>4 (Fourth Most Important</option>
-                    <option>5 (Fifth Most Important)</option>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="honesty">Honesty</label>
+                    <select class="form-control" id="question02" name="scores[1]">
+                      <option>1 (Most Important)</option>
+                      <option>2 (Second Most Important</option>
+                      <option>3 (Third Most Important</option>
+                      <option>4 (Fourth Most Important</option>
+                      <option>5 (Fifth Most Important)</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="respect">Respect</label>
+                    <select class="form-control" id="question03" name="scores[2]">
+                      <option>1 (Most Important)</option>
+                      <option>2 (Second Most Important</option>
+                      <option>3 (Third Most Important</option>
+                      <option>4 (Fourth Most Important</option>
+                      <option>5 (Fifth Most Important)</option>
                   </select>
                 </div>
               </div>
+            </div>
 
-              <div class="form-group">
-                <label for="respect">Respect</label>
-                <br>
-                <div class="col-md-4">
-                  <select class="form-control" id="question01" name="scores[0]">
-                    <option>1 (Most Important)</option>
-                    <option>2 (Second Most Important</option>
-                    <option>3 (Third Most Important</option>
-                    <option>4 (Fourth Most Important</option>
-                    <option>5 (Fifth Most Important)</option>
-                  </select>
-                </div>
-              </div>
-
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group">
                 <label for="kindness">Kindness</label>
-                <br>
-                <div class="col-md-4">
-                  <select class="form-control" id="question01" name="scores[0]">
+                  <select class="form-control" id="question04" name="scores[3]">
                     <option>1 (Most Important)</option>
                     <option>2 (Second Most Important</option>
                     <option>3 (Third Most Important</option>
@@ -95,23 +99,26 @@
                   </select>
                 </div>
               </div>
+            </div>
 
+          <div class="row">
+            <div class="col-md-6">
               <div class="form-group">
-                <br>
-                <div class="col-md-4">
-                  <select class="form-control" id="question01" name="scores[0]">
+                <label for="intellegence">Intellegence</label>
+                  <select class="form-control" id="question05" name="scores[4]">
                     <option>1 (Most Important)</option>
                     <option>2 (Second Most Important</option>
                     <option>3 (Third Most Important</option>
                     <option>4 (Fourth Most Important</option>
                     <option>5 (Fifth Most Important)</option>
                   </select>
-                </div>
               </div>
+            </div>
+          </div>
 
               <div class="form-group">
                 <h4 >Answer the following questions. </h4>
-                <h4> 1= I don't agree at all. 2 = I don't really agree. 3 = I sort of agree. 4 = I mostly agree. 5 = I agree very much.</h4>
+                <h4> 1= I don't agree at all.  2 = I don't really agree.  3 = I don't know.  4 = I mostly agree.  5 = I agree very much.</h4>
                 <label for="nature">I enjoy spending time in nature </label>
                   <label class="checkbox-inline"><input type="checkbox" value="">1</label>
                   <label class="checkbox-inline"><input type="checkbox" value="">2</label>
