@@ -33,86 +33,45 @@ module.exports = function(app) {
       res.json(true);
     });
 
-  var friendData = require('../data/friends.js');
-
 
     app.post('/api/friends', function(req, res){
+
+      var bestMatch = {
+        name: "",
+        photo: "",
+        friendDifference: 1000,
+      };
+
       var newFriend = req.body;
+      var newScores = newFriend.scores;
 
-      for(var i = 0; i < newFriend.scores.length; i++) {
-        if(newFriend.scores[i] == "1") {
-          newFriend.scores[i] = 1;
-        } else if(newFriend.scores[i] == "5") {
-          newFriend.scores[i] = 5;
-        } else {
-          newFriend.scores[i] = parseInt(newFriend.scores[i]);
-        }
-      }
+      var totalDifference = 0;
 
-      var differencesArray = [];
+      for (var i = 0, i < friends.length; i++ ){
 
-      for(var i = 0; i < friendData.length; i++) {
+        totalDifference = 0;
 
-        var comparedFriend = friendData[i];
-        var totalDifference = 0;
+        for (var j = 0; j < friends[i].scores[j]; j++) {
+
+          totalDifference += Math.abs(parseInt(newScores[j]) - parseInt(friends[i].score[j]));
         
-        for(var k = 0; k < comparedFriend.scores.length; k++) {
-          var differenceOneScore = Math.abs(comparedFriend.scores[k] - newFriend.scores[k]);
-          totalDifference += differenceOneScore;
-        }
+            if (totalDifference <= bestMatch.friendDifference) {
 
-        differencesArray[i] = totalDifference;
-      }
-
-      var bestFriendNum = differencesArray[0];
-      var bestFriendIndex = 0;
-
-      for(var i = 1; i < differencesArray.length; i++) {
-        if(differencesArray[i] < bestFriendNum) {
-          bestFriendNum = differencesArray[i];
-          bestFriendIndex = i;
+              bestMatch.name = friends[i].name;
+              bestMatch.photo = friends[i].photo;
+              bestMatch.friendDifference = totalDifference;
+            }
         }
       }
 
-      friendData.push(newFriend);
+      friends.push(newFriend);
 
-      res.json(friendData[bestFriendIndex]);
-    })
+      res.json(bestMatch);
+    });
+
   }
   
 
 
 
-  // ---------------------------------------------------------------------------
-  // I added this below code so you could clear out the table while working with the functionality.
-  // Don"t worry about it!
-
-//   app.post("/api/clear", function() {
-//     // Empty out the arrays of data
-//     friendsData = [];
-
-//     console.log(friendsData);
-//   });
-// };
-
-
-// Search for Specific Friend (or all friends) - provides JSON
-// app.get("/api/:friends?", function(req, res) {
-//   var chosen = req.params.friends;
-
-//   if (chosen) {
-//     console.log(chosen);
-
-//     for (var i = 0; i < friends.length; i++) {
-//       if (chosen === friends[i].routeName) {
-//         res.json(friends[i]);
-//         return;
-//       }
-//     }
-
-//     res.json(false);
-//   }
-//   else {
-//     res.json(friends);
-//   }
-// });
+  
